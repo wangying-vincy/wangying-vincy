@@ -8,7 +8,7 @@
       </head>
       <body>
         <gradio-lite>
-          import gradio as gr; gr.Interface(lambda img, prompt: img, [gr.Image(value="{{ base_path }}/images/jingzhijing.png"), "textbox"], "image").launch()
+          import gradio as gr; gr.Interface(lambda img, prompt: img, [gr.Image(), "textbox"], "image").launch()
         </gradio-lite>
       </body>
   </html>

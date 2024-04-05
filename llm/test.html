@@ -5,7 +5,7 @@
 	</head>
 	<body>
       <gradio-lite>
-        import gradio as gr; gr.Interface(lambda img, prompt: img, ["image", "textbox"], "image").launch()
+        import gradio as gr; gr.Interface(lambda img, prompt: img, [gr.Image(value="../image/shenghua.jpg"), "textbox"], "image").launch()
       </gradio-lite>
 	</body>
 </html>

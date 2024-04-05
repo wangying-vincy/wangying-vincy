@@ -4,12 +4,8 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@gradio/lite/dist/lite.css" />
 	</head>
 	<body>
-		<gradio-lite>
-		import gradio as gr
-
-		def greet(img, prompt):
-			return img
-		gr.Interface(greet, ["image", "textbox"], "image").launch()
-		</gradio-lite>
+      <gradio-lite>
+        import gradio as gr; gr.Interface(lambda img, prompt: img, ["image", "textbox"], "image").launch()
+      </gradio-lite>
 	</body>
 </html>

@@ -11,7 +11,10 @@
 {% else %}
   {% assign title = post.title %}
 {% endif %}
-
+<head>
+    <script type="module" crossorigin src="https://cdn.jsdelivr.net/npm/@gradio/lite/dist/lite.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@gradio/lite/dist/lite.css" />
+</head>
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
@@ -59,6 +62,12 @@
     {% elsif post.paperurl %}
       <p class="wordwrap">Download <a href=" {{ post.paperurl }} ">here</a></p>
     {% endif %}
+    <gradio-lite>
+		import gradio as gr
 
+		def greet(img, prompt):
+			return img
+		gr.Interface(greet, ["image", "textbox"], "image").launch()
+    </gradio-lite>
   </article>
 </div>
